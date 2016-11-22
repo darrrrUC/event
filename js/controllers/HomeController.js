@@ -1,5 +1,6 @@
-app.controller('HomeController', ['$scope', 'locations', function($scope, locations){
+app.controller('HomeController', ['$scope', 'locations', 'times', function($scope, locations, times){
 	$scope.locations = locations.posts;
+	$scope.times = times;
 
 	$scope.addSuggestion = function(){
 		if (!$scope.name || $scope.name === "") {

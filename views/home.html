@@ -24,20 +24,39 @@
 				
 		</div>
 	</div>
+	
 
-
-	<div ng-repeat="x in locations">
-		<div class="row">
-				<div class="col-md-2">
-					<h3 class="locationBlue">{{x.name}} </h3>
+<div class="row">
+	<div class="col-md-2">
+		<div ng-repeat="x in locations">
+			<div class="row">
+				<div class="filler2">
+					<h4 class="locationBlue">{{x.name}} </h4>
 					<small>{{x.place}}</small>
-					<p>Unique id:{{x.placeID}}</p>
 				</div>
-				<div class="col-md-6">
-					<div ng-repeat="event in locations[$index].events">
-						{{event}}
-					</div>
-				</div>
+			</div>
 		</div>
 	</div>
+
+
+	<div class="col-md-10">
+		<div class="timerow">
+			<div ng-repeat="x in locations">
+				<div class="row">
+					<div class="filler">
+					<div ng-repeat="event in locations[$index].events track by $index">
+							<div class="event">
+								<h4>{{event}}</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+
+
 </div>

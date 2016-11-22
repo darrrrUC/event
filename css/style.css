@@ -1,3 +1,63 @@
 .locationBlue{
 	color: #4D85B6;
 }
+
+.filler{
+	height: 100px;
+	margin-bottom: 25px;
+	background-color: #ccc;
+	display: inline-flex;
+
+}
+
+.filler2{
+	height: 100px;
+	margin-bottom: 25px;
+	background-color: #ccc;
+
+
+}
+
+.timerow{
+	width: 950px;
+	overflow-y : hidden;
+	overflow-x : scroll;
+	margin-top: 10px;
+	
+}
+
+.timesDiv{
+	width: 45px;
+	margin-left: 25px;
+	float: left;
+
+}
+
+.event{
+	width: 100px;
+	margin-left: 25px;
+	float: left;
+
+}
+
+.equal {
+  display: flex;
+  flex-wrap: wrap;
+}
+    
+.equal > div[class*='col-'] {  
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media screen and (min-width: 768px) {
+  .equal2, .equal2 > div[class*='col-'] {  
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex:1 0 auto;
+  }
+}
