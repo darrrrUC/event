@@ -1,31 +1,43 @@
 <div ng-controller="HomeController">
-<div class="row">
-
-	<div class="col-md-2">
-<form ng-submit="addSuggestion()">
-	<h3>Add location</h3>
-	<div class="formgroup">
-		<input type="text" class="form-control" placeholder="Name of place" ng-model="name"></input>
-		<input type="text" class="form-control" placeholder="Actual place" ng-model="place"></input>
-	</div>
-	<button type="submit" class="btn btn-primary">Add</button>
-</form>
-</div>
-</div>
-
-
-<div ng-repeat="x in locations">
 	<div class="row">
-<div class="col-md-2">
-<h3 class="locationBlue">{{x.name}} </h3>
-<small>{{x.place}}</small>
-<p>Unique id:{{x.placeID}}</p>
-</div>
-<div class="col-md-6">
-<p>content goes here</p>
-</div>
-</div>
+
+		<div class="col-md-2">
+			<form ng-submit="addSuggestion()">
+				<h3>Add location</h3>
+				<div class="formgroup">
+					<input type="text" class="form-control" placeholder="Name of place" ng-model="name"></input>
+					<input type="text" class="form-control" placeholder="Actual place" ng-model="place"></input>
+				</div>
+				<button type="submit" class="btn btn-primary">Add</button>
+			</form>
+		</div>
+
+		<div class="col-md-2">
+			<form ng-submit="addEventDetails()">
+				<h3>Add details</h3>
+				<div class="formgroup">
+					<input type="text" class="form-control" placeholder="Details" ng-model="details"></input>
+					<input type="text" class="form-control" placeholder="Put in id" ng-model="putInId"></input>
+				</div>
+				<button type="submit" class="btn btn-primary">Add</button>
+			</form>
+				
+		</div>
+	</div>
 
 
-
+	<div ng-repeat="x in locations">
+		<div class="row">
+				<div class="col-md-2">
+					<h3 class="locationBlue">{{x.name}} </h3>
+					<small>{{x.place}}</small>
+					<p>Unique id:{{x.placeID}}</p>
+				</div>
+				<div class="col-md-6">
+					<div ng-repeat="event in locations[$index].events">
+						{{event}}
+					</div>
+				</div>
+		</div>
+	</div>
 </div>
