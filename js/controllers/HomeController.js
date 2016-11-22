@@ -1,6 +1,6 @@
 app.controller('HomeController', ['$scope', 'locations', function($scope, locations){
 	$scope.locations = locations.posts;
-	
+
 	$scope.addSuggestion = function(){
 		if (!$scope.name || $scope.name === "") {
 			return;
@@ -15,6 +15,19 @@ app.controller('HomeController', ['$scope', 'locations', function($scope, locati
 		);
 		$scope.name = "";
 		$scope.place ="";
+	};
+
+	$scope.addEventDetails = function(){
+		if ((!$scope.details || $scope.details === "") || (!$scope.putInId || $scope.putInId === "")) {
+			return;
+		};
+		$scope.locations[$scope.putInId].events.push(
+			$scope.details
+		);
+
+		$scope.details ="";
+		$scope.putInId ="";
+
 	};
 
 }]);
